@@ -67,25 +67,29 @@
       font-weight: 600;
       color: #e0e0e0;
       margin-top: 10px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
 
     .highlight {
       color: #ff0077;
-      border-right: 2px solid #ff0077;
+      font-weight: bold;
+      margin-left: 5px;
       white-space: nowrap;
-      overflow: hidden;
-      display: inline-block;
-      width: 0;
-      animation: typing 2s steps(20, end) forwards, blink 0.75s step-end infinite;
     }
 
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
+    .cursor {
+      font-weight: 900;
+      font-size: 1.5em;
+      color: #ff0077;
+      animation: blink 0.7s infinite;
+      margin-left: 2px;
     }
 
     @keyframes blink {
-      50% { border-color: transparent }
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
     }
 
     p.bio {
@@ -179,7 +183,12 @@
   <header>
     <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/pfp.jpg" alt="Profile Picture">
     <h1>Hey, I'm Xtrapnation.</h1>
-    <p class="rotating-text">I do <span class="highlight" id="rotating-word"></span></p>
+
+    <!-- Rotating Typing Text -->
+    <p class="rotating-text">
+      I do <span class="highlight" id="typed-word"></span><span class="cursor">|</span>
+    </p>
+
     <p class="bio">
       I love YouTube and have a channel with over 1.6 million subscribers. I can edit videos, make nice thumbnails and anything else you can imagine.
     </p>
@@ -215,6 +224,7 @@
     If you'd like to work with me, reach out on Discord or via email anytime.
   </section>
 
+  <!-- Intersection Observer for fade-in -->
   <script>
     const observer = new IntersectionObserver(entries => {
       entries.forEach(entry => {
@@ -227,34 +237,44 @@
     document.querySelectorAll('.fade-in').forEach(el => {
       observer.observe(el);
     });
+  </script>
 
+  <!-- Typing Animation Script -->
+  <script>
     const words = ["thumbnails", "editing", "banners", "everything"];
+    const typedWord = document.getElementById("typed-word");
     let wordIndex = 0;
-    const rotatingWord = document.getElementById("rotating-word");
+    let charIndex = 0;
+    let typing = true;
 
-    function typeWord(word, callback) {
-      let i = 0;
-      rotatingWord.innerHTML = "";
-      rotatingWord.style.width = '0';
+    function typeEffect() {
+      const currentWord = words[wordIndex];
 
-      const typer = setInterval(() => {
-        rotatingWord.innerHTML += word.charAt(i);
-        i++;
-        if (i === word.length) {
-          clearInterval(typer);
-          setTimeout(callback, 1500);
+      if (typing) {
+        if (charIndex < currentWord.length) {
+          typedWord.textContent += currentWord.charAt(charIndex);
+          charIndex++;
+          setTimeout(typeEffect, 100);
+        } else {
+          typing = false;
+          setTimeout(typeEffect, 1500);
         }
-      }, 100);
+      } else {
+        if (charIndex > 0) {
+          typedWord.textContent = currentWord.substring(0, charIndex - 1);
+          charIndex--;
+          setTimeout(typeEffect, 50);
+        } else {
+          typing = true;
+          wordIndex = (wordIndex + 1) % words.length;
+          setTimeout(typeEffect, 300);
+        }
+      }
     }
 
-    function rotateWords() {
-      typeWord(words[wordIndex], () => {
-        wordIndex = (wordIndex + 1) % words.length;
-        rotateWords();
-      });
-    }
-
-    rotateWords();
+    document.addEventListener("DOMContentLoaded", () => {
+      typeEffect();
+    });
   </script>
 </body>
 </html>
