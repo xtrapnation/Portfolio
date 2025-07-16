@@ -59,6 +59,12 @@
       word-wrap: break-word;
     }
 
+    @media (min-width: 601px) {
+      h1 {
+        font-size: clamp(2em, 5vw, 3.5em);
+      }
+    }
+
     .rotating-text {
       font-size: 1.5em;
       font-weight: 600;
@@ -170,7 +176,7 @@
       border-radius: 12px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 30px;
+      margin-bottom: 20px;
       display: inline-block;
       transition: background 0.3s ease;
     }
@@ -218,6 +224,15 @@
       padding: 10px;
       border-radius: 10px;
       display: inline-block;
+      animation: fadeOut 2s ease 2s forwards;
+    }
+
+    @keyframes fadeOut {
+      to {
+        background: none;
+        padding: 0;
+        border-radius: 0;
+      }
     }
   </style>
 </head>
@@ -324,6 +339,10 @@
 
 <div class="contact-message">
     <a href="#top" class="cta-button" onclick="highlightContacts()">Let's Work Together</a>
+    <p>If you'd like to work with me, reach out on Discord or via email anytime.</p>
+    <div class="contact">
+      <!-- contact info should be here -->
+    </div>
   </div>
 
   <script>
@@ -331,7 +350,7 @@
       const contacts = document.querySelector('.contact');
       if (contacts) {
         contacts.classList.add('highlight-contacts');
-        setTimeout(() => contacts.classList.remove('highlight-contacts'), 2000);
+        setTimeout(() => contacts.classList.remove('highlight-contacts'), 4000);
       }
     }
   </script>
