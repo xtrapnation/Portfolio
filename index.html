@@ -162,13 +162,6 @@
       transform: translateY(0);
     }
 
-    .contact-message {
-      text-align: center;
-      margin-top: 30px;
-      font-size: 1em;
-      color: #ccc;
-    }
-
     .cta-button {
       background: #ff0077;
       color: white;
@@ -183,6 +176,13 @@
 
     .cta-button:hover {
       background: #e6006b;
+    }
+
+    .contact-message {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1em;
+      color: #ccc;
     }
 
     @media (max-width: 900px) {
@@ -228,7 +228,12 @@
     }
 
     @keyframes fadeOut {
-      to {
+      0% {
+        background: #444;
+        padding: 10px;
+        border-radius: 10px;
+      }
+      100% {
         background: none;
         padding: 0;
         border-radius: 0;
@@ -339,7 +344,6 @@
 
 <div class="contact-message">
     <a href="#top" class="cta-button" onclick="highlightContacts()">Let's Work Together</a>
-    <p>If you'd like to work with me, reach out on Discord or via email anytime.</p>
     <div class="contact">
       <!-- contact info should be here -->
     </div>
