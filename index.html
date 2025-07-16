@@ -18,6 +18,7 @@
       color: white;
       overflow-x: hidden;
       background: linear-gradient(to bottom, #1b1b1b, #121212);
+      font-size: 1.2em; /* Scaled base font size */
     }
 
     .wavy-bg {
@@ -47,26 +48,27 @@
       position: relative;
       z-index: 1;
       text-align: center;
-      padding: 50px 20px;
+      padding: 30px 20px; /* Reduced from 50px */
     }
 
     header img {
       width: 125px;
       border-radius: 50%;
-      margin-bottom: 20px;
+      margin-bottom: 10px; /* Reduced from 20px */
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
 
     h1 {
-      font-size: 3em;
+      font-size: 3.5em; /* Increased from 3em */
       font-weight: 900;
+      margin: 10px 0;
     }
 
     .rotating-text {
       font-size: 1.5em;
       font-weight: 600;
       color: #e0e0e0;
-      margin-top: 10px;
+      margin-top: 5px;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -80,9 +82,10 @@
     }
 
     .cursor {
-      font-weight: 900;
-      font-size: 1.5em;
-      color: #ff0077;
+      width: 1px;
+      height: 1.5em;
+      background-color: #ff0077;
+      display: inline-block;
       animation: blink 0.7s infinite;
       margin-left: 2px;
     }
@@ -96,14 +99,14 @@
       font-size: 1.25em;
       font-weight: 700;
       max-width: 600px;
-      margin: 0 auto 10px auto;
+      margin: 10px auto 5px auto;
       color: #e0e0e0;
     }
 
     .contact {
       text-align: center;
       font-size: 1em;
-      margin: 10px 0 20px 0;
+      margin: 5px 0 10px 0;
       color: #ccc;
     }
 
@@ -113,13 +116,13 @@
     }
 
     section {
-      max-width: 1200px;
-      margin: 40px auto;
-      padding: 0 20px;
+      max-width: 1600px; /* Increased from 1200px */
+      margin: 20px auto;  /* Reduced from 40px */
+      padding: 0 10px;    /* Reduced padding */
     }
 
     h2 {
-      font-size: 2em;
+      font-size: 2.2em; /* Increased from 2em */
       font-weight: 700;
       text-align: center;
       margin-bottom: 20px;
@@ -127,8 +130,9 @@
 
     .gallery {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(350px, 1fr)); /* Wider thumbnails */
+      gap: 10px; /* Reduced gap */
+      padding: 0 10px;
     }
 
     .gallery img {
@@ -167,7 +171,7 @@
       border-radius: 10px;
       text-decoration: none;
       font-weight: bold;
-      margin-top: 15px;
+      margin-top: 10px;
       display: inline-block;
       transition: background 0.3s ease;
     }
@@ -184,9 +188,8 @@
     <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/pfp.jpg" alt="Profile Picture">
     <h1>Hey, I'm Xtrapnation.</h1>
 
-    <!-- Rotating Typing Text -->
     <p class="rotating-text">
-      I do <span class="highlight" id="typed-word"></span><span class="cursor">|</span>
+      I do <span class="highlight" id="typed-word"></span><span class="cursor"></span>
     </p>
 
     <p class="bio">
