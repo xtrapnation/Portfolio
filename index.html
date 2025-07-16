@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>xtrapnation – Thumbnails & Editing </title>
+  <title>xtrapnation – Thumbnails & Editing</title>
   <link rel="icon" href="pfp.jpg" type="image/jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -11,20 +11,7 @@
     html {
       scroll-behavior: smooth;
     }
-<script>
-  const words = ["thumbnails", "editing", "banners", "everything"];
-  let current = 0;
-  const wordEl = document.getElementById("rotating-word");
 
-  setInterval(() => {
-    current = (current + 1) % words.length;
-    wordEl.style.opacity = 0;
-    setTimeout(() => {
-      wordEl.textContent = words[current];
-      wordEl.style.opacity = 1;
-    }, 300);
-  }, 2500); // Change word every 2.5 seconds
-</script>
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -74,19 +61,33 @@
       font-size: 3em;
       font-weight: 900;
     }
-    <p class="rotating-text">I do <span class="highlight" id="rotating-word">thumbnails</span>.</p>
 
     .rotating-text {
-  font-size: 1.5em;
-  font-weight: 600;
-  color: #e0e0e0;
-  margin-top: 10px;
-}
+      font-size: 1.5em;
+      font-weight: 600;
+      color: #e0e0e0;
+      margin-top: 10px;
+    }
 
-.highlight {
-  color: #ff0077;
-  transition: opacity 0.3s ease;
-}
+    .highlight {
+      color: #ff0077;
+      border-right: 2px solid #ff0077;
+      white-space: nowrap;
+      overflow: hidden;
+      display: inline-block;
+      width: 0;
+      animation: typing 2s steps(20, end) forwards, blink 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink {
+      50% { border-color: transparent }
+    }
+
     p.bio {
       font-size: 1.25em;
       font-weight: 700;
@@ -178,6 +179,7 @@
   <header>
     <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/pfp.jpg" alt="Profile Picture">
     <h1>Hey, I'm Xtrapnation.</h1>
+    <p class="rotating-text">I do <span class="highlight" id="rotating-word"></span></p>
     <p class="bio">
       I love YouTube and have a channel with over 1.6 million subscribers. I can edit videos, make nice thumbnails and anything else you can imagine.
     </p>
@@ -225,6 +227,34 @@
     document.querySelectorAll('.fade-in').forEach(el => {
       observer.observe(el);
     });
+
+    const words = ["thumbnails", "editing", "banners", "everything"];
+    let wordIndex = 0;
+    const rotatingWord = document.getElementById("rotating-word");
+
+    function typeWord(word, callback) {
+      let i = 0;
+      rotatingWord.innerHTML = "";
+      rotatingWord.style.width = '0';
+
+      const typer = setInterval(() => {
+        rotatingWord.innerHTML += word.charAt(i);
+        i++;
+        if (i === word.length) {
+          clearInterval(typer);
+          setTimeout(callback, 1500);
+        }
+      }, 100);
+    }
+
+    function rotateWords() {
+      typeWord(words[wordIndex], () => {
+        wordIndex = (wordIndex + 1) % words.length;
+        rotateWords();
+      });
+    }
+
+    rotateWords();
   </script>
 </body>
 </html>
