@@ -43,23 +43,24 @@
             text-align: center;
             padding: 50px 20px;
         }
-        header img {
-            width: 200px;
-            border-radius: 50%;
-            margin-bottom: 20px;
-        }
-
+           header img {
+        width: 100px;
+        border-radius: 50%;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
         h1 {
-            font-size: 3.5em;
+            font-size: 3em;
             font-weight: 900;
         }
 
-        p.bio {
-            font-size: 2em;
-            max-width: 600px;
-            margin: 0 auto;
-            color: #aaa;
-        }
+           p.bio {
+        font-size: 1.25em;
+        font-weight: 700;
+        max-width: 600px;
+        margin: 0 auto;
+        color: #e0e0e0;
+    }
 
         section {
             max-width: 1200px;
@@ -74,11 +75,11 @@
             margin-bottom: 20px;
         }
 
-        .gallery {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
+            .gallery {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 20px;
+    }
 
         .gallery img {
             width: 100%;
@@ -96,6 +97,11 @@
             margin: 50px 0;
             color: #ccc;
         }
+        
+        .contact i {
+        margin-right: 6px;
+        color: #ccc;
+    }
 
         .fade-in {
             opacity: 0;
@@ -119,7 +125,8 @@
         I love YouTube and have a channel with over 1.6 million subscribers. I can edit videos, make nice thumbnails and anything else you can imagine.
     </p>
     <div class="contact">
-        Contact me: <b>Discord: xtrapnation</b> | <b>Email: example@example.com</b>
+        <i class="fab fa-discord"></i> <b>xtrapnation</b> &nbsp;|&nbsp;
+        <i class="fas fa-envelope"></i> <b>example@example.com</b>
     </div>
 </header>
 
