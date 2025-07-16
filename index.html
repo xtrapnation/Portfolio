@@ -7,20 +7,35 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
     <style>
         body {
-    margin: 0;
-    font-family: 'Inter', sans-serif;
-    background: linear-gradient(-45deg, #ff4e50, #fc913a, #f9d423, #ff4e50);
-    background-size: 400% 400%;
-    animation: gradientWave 10s ease infinite;
-    color: white;
-    scroll-behavior: smooth;
-}
+            margin: 0;
+            font-family: 'Inter', sans-serif;
+            color: white;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
 
-        @keyframes gradientWave {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-}
+        .wavy-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                #2a2a2a,
+                #2a2a2a 20px,
+                #1c1c1c 20px,
+                #1c1c1c 40px
+            );
+            background-size: 150% 150%;
+            animation: moveWaves 20s linear infinite;
+            z-index: -1;
+        }
+
+        @keyframes moveWaves {
+            from { transform: translate(0, 0); }
+            to { transform: translate(-50%, -50%); }
+        }
 
         header {
             text-align: center;
