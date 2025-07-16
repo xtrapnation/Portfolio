@@ -1,192 +1,205 @@
 <!DOCTYPE html>
 <html lang="en">
-html {
-    scroll-behavior: smooth;
-}
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Xtrapnation – Video Editor & YouTuber</title>
   <link rel="icon" href="pfp.jpg" type="image/jpg" />
-</head>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Xtrapnation Portfolio</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        body {
-            margin: 0;
-            font-family: 'Inter', sans-serif;
-            color: white;
-            scroll-behavior: smooth;
-            overflow-x: hidden;
-        }
-
-        .wavy-bg {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 400%;
-            height: 400%;
-            background: repeating-linear-gradient(
-                45deg,
-                #2a2a2a,
-                #2a2a2a 20px,
-                #1c1c1c 20px,
-                #1c1c1c 40px
-            );
-            background-size: 250% 250%;
-            animation: moveWaves 20s linear infinite;
-            z-index: -1;
-        }
-
-        @keyframes moveWaves {
-            from { transform: translate(0, 0); }
-            to { transform: translate(-50%, -50%); }
-        }
-
-        header, section {
-            position: relative;
-            z-index: 1;
-            text-align: center;
-            padding: 50px 20px;
-        }
-           header img {
-        width: 125px;
-        border-radius: 50%;
-        margin-bottom: 20px;
-        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-    }
-        h1 {
-            font-size: 3em;
-            font-weight: 900;
-        }
-
-           p.bio {
-        font-size: 1.25em;
-        font-weight: 700;
-        max-width: 600px;
-        margin: 0 auto;
-        color: #e0e0e0;
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    html {
+      scroll-behavior: smooth;
     }
 
-        section {
-            max-width: 1200px;
-            margin: 50px auto;
-            padding: 0 20px;
-        }
-
-        h2 {
-            font-size: 2em;
-            font-weight: 700;
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-            .gallery {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-        gap: 20px;
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      color: white;
+      overflow-x: hidden;
+      background: linear-gradient(to bottom, #1b1b1b, #121212);
     }
 
-        .gallery img {
-            width: 100%;
-            border-radius: 10px;
-            transition: transform 0.3s ease;
-        }
-
-        .gallery img:hover {
-             transform: scale(1.03);
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-        .contact {
-    text-align: center;
-    font-size: 1em;
-    margin: 20px 0 10px 0; /* Top: 20px, Bottom: 10px */
-    color: #ccc;
-}
-        
-        .contact i {
-        margin-right: 6px;
-        color: #ccc;
+    .wavy-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 400%;
+      height: 400%;
+      background: repeating-linear-gradient(
+        45deg,
+        #2a2a2a,
+        #2a2a2a 20px,
+        #1c1c1c 20px,
+        #1c1c1c 40px
+      );
+      background-size: 250% 250%;
+      animation: moveWaves 20s linear infinite;
+      z-index: -1;
     }
-section.contact {
-    max-width: 100%;
-    margin: 40px auto 0;
-    text-align: center;
-}
-.contact-message {
-    text-align: center;
-    margin-top: 40px;
-    font-size: 1em;
-    color: #ccc;
-}
-        .fade-in {
-            opacity: 0;
-            transform: translateY(20px);
-            transition: opacity 1s ease-out, transform 1s ease-out;
-        }
 
-        .fade-in.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    </style>
+    @keyframes moveWaves {
+      from { transform: translate(0, 0); }
+      to { transform: translate(-50%, -50%); }
+    }
+
+    header, section {
+      position: relative;
+      z-index: 1;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    header img {
+      width: 125px;
+      border-radius: 50%;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: 900;
+    }
+
+    p.bio {
+      font-size: 1.25em;
+      font-weight: 700;
+      max-width: 600px;
+      margin: 0 auto 10px auto;
+      color: #e0e0e0;
+    }
+
+    .contact {
+      text-align: center;
+      font-size: 1em;
+      margin: 10px 0 20px 0;
+      color: #ccc;
+    }
+
+    .contact i {
+      margin-right: 6px;
+      color: #ccc;
+    }
+
+    section {
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+
+    h2 {
+      font-size: 2em;
+      font-weight: 700;
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+    }
+
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 1s ease-out, transform 1s ease-out;
+    }
+
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .contact-message {
+      text-align: center;
+      margin-top: 30px;
+      font-size: 1em;
+      color: #ccc;
+    }
+
+    .cta-button {
+      background: #ff0077;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 15px;
+      display: inline-block;
+      transition: background 0.3s ease;
+    }
+
+    .cta-button:hover {
+      background: #e6006b;
+    }
+  </style>
 </head>
 <body>
-<div class="wavy-bg"></div>
+  <div class="wavy-bg"></div>
 
-<header>
+  <header>
     <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/pfp.jpg" alt="Profile Picture">
     <h1>Hey, I'm Xtrapnation.</h1>
     <p class="bio">
-        I love YouTube and have a channel with over 1.6 million subscribers. I can edit videos, make nice thumbnails and anything else you can imagine.
+      I love YouTube and have a channel with over 1.6 million subscribers. I can edit videos, make nice thumbnails and anything else you can imagine.
     </p>
     <div class="contact">
-        <i class="fab fa-discord"></i> <b>xtrapnation</b> &nbsp;|&nbsp;
-        <i class="fas fa-envelope"></i> <b>example@example.com</b>
+      <i class="fab fa-discord"></i> <b>xtrapnation</b> &nbsp;|&nbsp;
+      <i class="fas fa-envelope"></i> <b>example@example.com</b>
     </div>
-</header>
+    <a href="mailto:example@example.com" class="cta-button">Let's Work Together</a>
+  </header>
 
-<section class="fade-in">
+  <section class="fade-in">
     <h2>THUMBNAILS</h2>
     <div class="gallery">
-        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/chest.jpg" alt="Chest">
-        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/paths.jpg" alt="Thumbnail 4"> 
-        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/mythic.jpg" alt="Thumbnail 3">
-        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/mrbeasttype.png" alt="Thumbnail 2">
-        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/tatoxgartic.jpg" alt="Thumbnail 5">
-        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/tatoxmc.jpg" alt="Thumbnail 6">
+      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/chest.jpg" alt="Chest">
+      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/paths.jpg" alt="Thumbnail 4"> 
+      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/mythic.jpg" alt="Thumbnail 3">
+      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/mrbeasttype.png" alt="Thumbnail 2">
+      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/tatoxgartic.jpg" alt="Thumbnail 5">
+      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/tatoxmc.jpg" alt="Thumbnail 6">
     </div>
-</section>
+  </section>
 
-<section class="fade-in">
+  <section class="fade-in">
     <h2>EDITS</h2>
-  <div class="gallery">
-        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/bbedit.gif" alt="Edit Preview">
-        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/psycho.gif" alt="Edit Preview">
-        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/beast.gif" alt="Edit Preview">
+    <div class="gallery">
+      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/bbedit.gif" alt="Edit Preview">
+      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/psycho.gif" alt="Edit Preview">
+      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/beast.gif" alt="Edit Preview">
     </div>
-</section>
+  </section>
 
-<section class="contact-message fade-in">
+  <section class="contact-message fade-in">
     If you'd like to work with me, reach out on Discord or via email anytime.
-</section>
+  </section>
 
-<script>
+  <script>
     const observer = new IntersectionObserver(entries => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('visible');
-            }
-        });
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+        }
+      });
     });
 
     document.querySelectorAll('.fade-in').forEach(el => {
-        observer.observe(el);
+      observer.observe(el);
     });
-</script>
-
+  </script>
 </body>
 </html>
