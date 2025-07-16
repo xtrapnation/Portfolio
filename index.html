@@ -259,7 +259,7 @@
       <i class="fab fa-discord"></i> <b>xtrapnation</b> &nbsp;|&nbsp;
       <i class="fas fa-envelope"></i> <b>example@example.com</b>
     </div>
-    <a href="mailto:example@example.com" class="cta-button">Let's Work Together</a>
+   
   </header>
 
   <section class="fade-in">
@@ -283,9 +283,14 @@
     </div>
   </section>
 
-  <section class="contact-message fade-in">
-    If you'd like to work with me, reach out on Discord or via email anytime.
-  </section>
+ <section class="contact-message fade-in">
+  <a href="#top" class="cta-button" onclick="highlightContacts()">Let's Work Together</a>
+  <br>
+  If you'd like to work with me, reach out on Discord or via email anytime.
+  <div class="contact">
+    <!-- contact info should be here -->
+  </div>
+</section>
 
   <!-- Intersection Observer for fade-in -->
   <script>
@@ -342,12 +347,6 @@
 </body>
 </html>
 
-<div class="contact-message">
-    <a href="#top" class="cta-button" onclick="highlightContacts()">Let's Work Together</a>
-    <div class="contact">
-      <!-- contact info should be here -->
-    </div>
-  </div>
 
   <script>
     function highlightContacts() {
