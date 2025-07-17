@@ -385,14 +385,7 @@
         white-space: normal;
       }
     }
-<script>
-function copyToClipboard(text, element) {
-  navigator.clipboard.writeText(text).then(() => {
-    element.classList.add('copied');
-    setTimeout(() => element.classList.remove('copied'), 2000);
-  });
-}
-</script>
+
     /* Always allow tooltip to wrap if needed */
     .icon-tooltip .tooltip-content {
       word-break: break-word;
@@ -510,6 +503,14 @@ function copyToClipboard(text, element) {
     </div>
   </section>
 
+<script>
+function copyToClipboard(text, element) {
+  navigator.clipboard.writeText(text).then(() => {
+    element.classList.add('copied');
+    setTimeout(() => element.classList.remove('copied'), 2000);
+  });
+}
+</script>
   <!-- Intersection Observer for fade-in -->
   <script>
     const observer = new IntersectionObserver(entries => {
