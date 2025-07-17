@@ -4,14 +4,13 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>xtrapnation – Thumbnails & Editing</title>
-  <link rel="icon" href="cpfp.jpg" type="image/jpg" />
+  <link rel="icon" href="pfp.jpg" type="image/jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     html {
       scroll-behavior: smooth;
     }
-   
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -20,7 +19,6 @@
       background: linear-gradient(to bottom, #1b1b1b, #121212);
       font-size: 1.2em;
     }
-
     .wavy-bg {
       position: fixed;
       top: 0;
@@ -32,39 +30,33 @@
       animation: moveWaves 40s linear infinite;
       z-index: -1;
     }
-
     @keyframes moveWaves {
       from { transform: translate(0, 0); }
       to { transform: translate(-50%, -50%); }
     }
-
     header, section {
       position: relative;
       z-index: 1;
       text-align: center;
       padding: 30px 20px;
     }
-
     header img {
       width: 125px;
       border-radius: 50%;
       margin-bottom: 10px;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
     }
-
     h1 {
       font-size: clamp(2.5em, 7vw, 4.5em);
       font-weight: 900;
       margin: 10px 0;
       word-wrap: break-word;
     }
-
     @media (min-width: 601px) {
       h1 {
         font-size: clamp(2em, 5vw, 3.5em);
       }
     }
-
     .rotating-text {
       font-size: 1.5em;
       font-weight: 600;
@@ -74,14 +66,12 @@
       justify-content: center;
       align-items: center;
     }
-
     .highlight {
       color: #ff0077;
       font-weight: bold;
       margin-left: 5px;
       white-space: nowrap;
     }
-
     .cursor {
       width: 1px;
       height: 1.5em;
@@ -90,12 +80,10 @@
       animation: blink 0.7s infinite;
       margin-left: 2px;
     }
-
     @keyframes blink {
       0%, 100% { opacity: 1; }
       50% { opacity: 0; }
     }
-
     p.bio {
       font-size: 1.25em;
       font-weight: 700;
@@ -103,32 +91,34 @@
       margin: 10px auto 5px auto;
       color: #e0e0e0;
     }
-
     .contact {
       text-align: center;
       font-size: 1em;
       margin: 5px 0 10px 0;
       color: #ccc;
+      background: #444;
+      padding: 10px;
+      border-radius: 10px;
+      display: inline-block;
+      min-width: 240px;
+      min-height: 38px;
+      transition: background 0.4s;
     }
-
     .contact i {
       margin-right: 6px;
       color: #ccc;
     }
-
     section {
       max-width: 1600px;
       margin: 20px auto;
       padding: 0 10px;
     }
-
     h2 {
       font-size: 2.2em;
       font-weight: 700;
       text-align: center;
       margin-bottom: 20px;
     }
-
     .gallery {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -137,7 +127,6 @@
       box-sizing: border-box;
       max-width: 100vw;
     }
-
     .gallery img {
       width: 100%;
       height: auto;
@@ -145,141 +134,56 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: block;
     }
-
     .gallery img:hover {
       transform: scale(1.03);
       box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
     }
-
     .fade-in {
       opacity: 0;
       transform: translateY(20px);
       transition: opacity 1s ease-out, transform 1s ease-out;
     }
-
     .fade-in.visible {
       opacity: 1;
       transform: translateY(0);
     }
-
     .cta-button {
-  background: linear-gradient(90deg, #ff0077, #ffbe00, #ff0077);
-  background-size: 200% 200%;
-  color: white;
-  padding: 16px 34px;
-  border-radius: 14px;
-  text-decoration: none;
-  font-weight: bold;
-  font-size: 1.18em;
-  margin-bottom: 24px;
-  display: inline-block;
-  box-shadow: 0 0 18px #ff007760;
-  transition: transform 0.2s, box-shadow 0.2s;
-  animation: gradient-moving 2.5s linear infinite, pulse 1.6s infinite;
-  border: none;
-  outline: none;
-  cursor: pointer;
-}
-
+      background: linear-gradient(90deg, #ff0077, #ffbe00, #ff0077);
+      background-size: 200% 200%;
+      color: white;
+      padding: 16px 34px;
+      border-radius: 14px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1.18em;
+      margin-bottom: 24px;
+      display: inline-block;
+      box-shadow: 0 0 18px #ff007760;
+      transition: transform 0.2s, box-shadow 0.2s;
+      animation: gradient-moving 2.5s linear infinite, pulse 1.6s infinite;
+      border: none;
+      outline: none;
+      cursor: pointer;
+    }
     @keyframes gradient-moving {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
-}
-@keyframes pulse {
-  0%, 100% { transform: scale(1);}
-  50% { transform: scale(1.06);}
-}
-.cta-button:hover, .cta-button:focus {
-  box-shadow: 0 0 28px #ffbe00bb, 0 0 12px #ff0077cc;
-  transform: scale(1.09) rotate(-1deg);
-  background-position: 100% 0;
-}
-
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+    @keyframes pulse {
+      0%, 100% { transform: scale(1);}
+      50% { transform: scale(1.06);}
+    }
+    .cta-button:hover, .cta-button:focus {
+      box-shadow: 0 0 28px #ffbe00bb, 0 0 12px #ff0077cc;
+      transform: scale(1.09) rotate(-1deg);
+      background-position: 100% 0;
+    }
     .contact-message {
       text-align: center;
       margin-top: 30px;
       font-size: 1em;
       color: #ccc;
-    }
-
-    @media (max-width: 900px) {
-      .gallery {
-        grid-template-columns: 1fr;
-        padding: 0 20px;
-      }
-    }
-
-    @media (max-width: 600px) {
-      h1 {
-        font-size: clamp(2em, 10vw, 3.5em);
-        padding: 0 10px;
-      }
-      /* Responsive tooltips for mobile */
-@media (max-width: 600px) {
-  .specs-icons-container {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-  .icon-tooltip .tooltip-content {
-    width: 95vw !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    bottom: auto !important;
-    top: 115% !important;
-    font-size: 16px;
-    padding: 14px;
-    box-sizing: border-box;
-    word-break: break-word;
-    white-space: normal;
-  }
-}
-
-/* Always allow tooltip to wrap if needed */
-.icon-tooltip .tooltip-content {
-  word-break: break-word;
-  white-space: normal;
-}
-      .rotating-text {
-        font-size: 1.1em;
-        padding: 0 10px;
-      }
-
-      .gallery {
-        grid-template-columns: 1fr;
-        padding: 0 10px;
-      }
-
-      .bio, .contact-message {
-        font-size: 0.95em;
-        padding: 0 10px;
-      }
-    }
-
-    link[rel="icon"] {
-      border-radius: 50%;
-      overflow: hidden;
-    }
-
-    .highlight-contacts {
-      background: #444;
-      padding: 10px;
-      border-radius: 10px;
-      display: inline-block;
-      animation: fadeOut 2s ease 2s forwards;
-    }
-
-    @keyframes fadeOut {
-      0% {
-        background: #444;
-        padding: 10px;
-        border-radius: 10px;
-      }
-      100% {
-        background: none;
-        padding: 0;
-        border-radius: 0;
-      }
     }
     .yt-channel-link {
       color: #ff0077;
@@ -301,213 +205,166 @@
       border: 3px solid #ff0077;
       box-shadow: 0 0 12px #ff0077;
     }
-    /* Tooltip icons style */
     .specs-icons-container {
       margin: 18px 0 8px 0;
       display: flex;
       justify-content: center;
       gap: 18px;
     }
-/* Tooltip: Desktop behavior remains the same */
-.icon-tooltip .tooltip-content {
-  /* ...existing styles... */
-}
-
-/* Tooltip: Mobile fix */
-@media (max-width: 600px) {
-  .specs-icons-container {
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 36px; /* Add more space below icons for tooltip */
-  }
-  .icon-tooltip .tooltip-content {
-    position: fixed !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    top: auto !important;
-    bottom: 8vh !important;
-    width: 96vw !important;
-    max-width: 400px;
-    min-width: 0;
-    z-index: 2000;
-    border-radius: 16px;
-    font-size: 1.1em;
-    box-shadow: 0 6px 32px #000a;
-    word-break: break-word;
-    white-space: normal;
-    padding: 16px 16px;
-    text-align: left;
-    opacity: 1;
-    visibility: visible;
-    pointer-events: none; /* Tooltip only shows on hover/focus; can't be interacted with, prevents overlap issues */
-  }
-  .icon-tooltip:hover .tooltip-content,
-  .icon-tooltip:focus-within .tooltip-content {
-    pointer-events: auto;
-  }
-}
-
-/* Prevent tooltip from being cut off by other content */
-.specs-icons-container {
-  margin-bottom: 38px;
-}
-
-/* Fix contact highlight snap by keeping the padding/min-height */
-.contact,
-.highlight-contacts {
-  min-height: 38px; /* Set to your contact div's height with padding */
-  transition: background 0.4s, padding 0.4s, border-radius 0.4s;
-}
-.highlight-contacts {
-  background: #444;
-  padding: 10px;
-  border-radius: 10px;
-  display: inline-block;
-  animation: fadeOut 2s ease 2s forwards;
-}
-
-@keyframes fadeOut {
-  0% {
-    background: #444;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  99% {
-    background: #444;
-    padding: 10px;
-    border-radius: 10px;
-  }
-  100% {
-    background: none;
-    padding: 10px; /* keep padding so it doesn't snap */
-    border-radius: 10px;
-  }
-}
-@media (max-width: 600px) {
-  .mobile-tooltip-spacer {
-    height: 62px; /* At least the height of the largest tooltip */
-  }
-}
-.highlight-contacts {
-  background: #444;
-  border-radius: 10px;
-  animation: fadeOutBg 2s ease 2s forwards;
-}
-@keyframes fadeOutBg {
-  0% { background: #444; }
-  100% { background: none; }
-}
     .icon-tooltip {
       position: relative;
       display: inline-block;
       cursor: pointer;
       margin: 0 10px;
-    }
-    .icon-tooltip .tooltip-content {
-      visibility: hidden;
-      width: 260px;
-      background: #222;
-      color: #fff;
-      text-align: left;
-      border-radius: 8px;
-      padding: 12px;
-      position: absolute;
-      z-index: 10;
-      bottom: 130%; /* Position above the icon */
-      left: 50%;
-      transform: translateX(-50%);
-      opacity: 0;
-      transition: opacity 0.3s;
-      font-size: 15px;
-      box-shadow: 0 0 20px #000a;
-    }
-    .icon-tooltip:hover .tooltip-content,
-    .icon-tooltip:focus-within .tooltip-content {
-      visibility: visible;
-      opacity: 1;
+      outline: none;
     }
     .icon {
       font-size: 36px;
       vertical-align: middle;
       color: #ff0077;
       transition: color 0.2s;
+      outline: none;
     }
-    .icon-tooltip:hover .icon,
-    .icon-tooltip:focus-within .icon {
+    .icon-tooltip.active .icon,
+    .icon-tooltip:focus-within .icon,
+    .icon-tooltip:hover .icon {
       color: #fff700;
+    }
+    .tooltip-content {
+      display: none;
+      position: absolute;
+      left: 50%;
+      bottom: 130%;
+      transform: translateX(-50%);
+      width: 260px;
+      background: #222;
+      color: #fff;
+      text-align: left;
+      border-radius: 8px;
+      padding: 12px;
+      z-index: 10;
+      font-size: 15px;
+      box-shadow: 0 0 20px #000a;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s;
+      word-break: break-word;
+      white-space: normal;
+    }
+    .icon-tooltip.active .tooltip-content,
+    .icon-tooltip:focus-within .tooltip-content,
+    .icon-tooltip:hover .tooltip-content {
+      display: block;
+      opacity: 1;
+      pointer-events: auto;
     }
     .tooltip-content small {
       color: #ff90b7;
       font-size: 0.93em;
     }
-
+    /* Fade-out animation for tooltip */
+    .tooltip-content.fading-out {
+      opacity: 0 !important;
+      pointer-events: none !important;
+      transition: opacity 0.22s;
+    }
+    /* Mobile styles */
+    @media (max-width: 600px) {
+      .specs-icons-container {
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 36px;
+      }
+      .icon-tooltip {
+        margin: 0 4px;
+      }
+      .tooltip-content {
+        position: absolute;
+        left: 50%;
+        top: 120%;
+        bottom: auto;
+        width: 94vw;
+        max-width: 360px;
+        min-width: unset;
+        border-radius: 14px;
+        font-size: 1.08em;
+        box-shadow: 0 6px 32px #000a;
+        padding: 16px 10px;
+        text-align: left;
+        z-index: 99;
+        word-break: break-word;
+        white-space: normal;
+      }
+      .specs-icons-container {
+        margin-bottom: 54px;
+      }
+    }
   </style>
 </head>
 <body>
   <div class="wavy-bg"></div>
-<div class="mobile-tooltip-spacer"></div>
 
- <header>
-  <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/pfp.jpg" alt="Profile Picture">
-  <h1>Hey, I'm Xtrapnation.</h1>
+  <header>
+    <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/pfp.jpg" alt="Profile Picture">
+    <h1>Hey, I'm Xtrapnation.</h1>
 
-  <p class="rotating-text">
-    I do <span class="highlight" id="typed-word"></span><span class="cursor"></span>
-  </p>
+    <p class="rotating-text">
+      I do <span class="highlight" id="typed-word"></span><span class="cursor"></span>
+    </p>
 
-  <p class="bio">
-    I love YouTube and have a 
-    <a href="https://www.youtube.com/@xtrapnation" class="yt-channel-link" target="_blank">channel</a>
-    with over 1.6 million subscribers. I can edit videos, make nice thumbnails and anything else you can imagine.
-  </p>
-  <div class="contact">
-    <i class="fab fa-discord"></i> <b>xtrapnation</b> &nbsp;|&nbsp;
-    <i class="fas fa-envelope"></i> <b>xtrapnationtoo@gmail.com</b>
-  </div>
+    <p class="bio">
+      I love YouTube and have a 
+      <a href="https://www.youtube.com/@xtrapnation" class="yt-channel-link" target="_blank">channel</a>
+      with over 1.6 million subscribers. I can edit videos, make nice thumbnails and anything else you can imagine.
+    </p>
+    <div class="contact">
+      <i class="fab fa-discord"></i> <b>xtrapnation</b> &nbsp;|&nbsp;
+      <i class="fas fa-envelope"></i> <b>xtrapnationtoo@gmail.com</b>
+    </div>
 
-  <div class="specs-icons-container" aria-label="Specs & Pricing">
-    <span class="icon-tooltip" tabindex="0">
-      <span class="icon" title="PC Specs"><i class="fas fa-desktop"></i></span>
-      <div class="tooltip-content">
-        <strong>PC Specs:</strong><br>
-        RTX 5090 32GB OC<br>
-        Ryzen 7 9800x3D<br>
-        64GB DDR5 6000Mhz<br>
-        7TB m.2 NVME<br>
-        <em>Faster editing and render times</em>
-      </div>
-    </span>
-    <span class="icon-tooltip" tabindex="0">
-      <span class="icon" title="Monitor"><i class="fas fa-tv"></i></span>
-      <div class="tooltip-content">
-        <strong>Monitor:</strong><br>
-        AW3225QF<br>
-        32 inch, 4k, OLED, 240hz<br>
-        <em>4k OLED = perfect colors</em>
-      </div>
-    </span>
-    <span class="icon-tooltip" tabindex="0">
-      <span class="icon" title="Software"><i class="fas fa-layer-group"></i></span>
-      <div class="tooltip-content">
-        <strong>Software:</strong><br>
-        Photoshop 2025<br>
-        Premiere Pro 2025<br>
-        After Effects 2025
-      </div>
-    </span>
-    <span class="icon-tooltip" tabindex="0">
-      <span class="icon" title="Prices"><i class="fas fa-dollar-sign"></i></span>
-      <div class="tooltip-content">
-        <strong>Prices:</strong><br>
-        $15* per minute (longforms)<br>
-        $15* (per short)<br>
-        $20* (thumbnails)<br>
-        $10 (banners/pfp's)<br>
-        <small>*Prices may vary based on complexity and turnaround</small>
-      </div>
-    </span>
-  </div>
-</header>
+    <div class="specs-icons-container" aria-label="Specs & Pricing">
+      <span class="icon-tooltip" tabindex="0" data-tooltip="pc">
+        <span class="icon" title="PC Specs"><i class="fas fa-desktop"></i></span>
+        <div class="tooltip-content" id="tooltip-pc">
+          <strong>PC Specs:</strong><br>
+          RTX 5090 32GB OC<br>
+          Ryzen 7 9800x3D<br>
+          64GB DDR5 6000Mhz<br>
+          7TB m.2 NVME<br>
+          <em>Faster editing and render times</em>
+        </div>
+      </span>
+      <span class="icon-tooltip" tabindex="0" data-tooltip="monitor">
+        <span class="icon" title="Monitor"><i class="fas fa-tv"></i></span>
+        <div class="tooltip-content" id="tooltip-monitor">
+          <strong>Monitor:</strong><br>
+          AW3225QF<br>
+          32 inch, 4k, OLED, 240hz<br>
+          <em>4k OLED = perfect colors</em>
+        </div>
+      </span>
+      <span class="icon-tooltip" tabindex="0" data-tooltip="software">
+        <span class="icon" title="Software"><i class="fas fa-layer-group"></i></span>
+        <div class="tooltip-content" id="tooltip-software">
+          <strong>Software:</strong><br>
+          Photoshop 2025<br>
+          Premiere Pro 2025<br>
+          After Effects 2025
+        </div>
+      </span>
+      <span class="icon-tooltip" tabindex="0" data-tooltip="prices">
+        <span class="icon" title="Prices"><i class="fas fa-dollar-sign"></i></span>
+        <div class="tooltip-content" id="tooltip-prices">
+          <strong>Prices:</strong><br>
+          $15* per minute (longforms)<br>
+          $15* (per short)<br>
+          $20* (thumbnails)<br>
+          $10 (banners/pfp's)<br>
+          <small>*Prices may vary based on complexity and turnaround</small>
+        </div>
+      </span>
+    </div>
+  </header>
 
   <section class="fade-in">
     <h2>THUMBNAILS</h2>
@@ -524,29 +381,29 @@
     </div>
   </section>
 
- <section class="fade-in">
-  <h2>EDITS</h2>
-  <div class="gallery">
-    <a href="https://youtube.com/shorts/jd1-WVEW678?feature=share" target="_blank" class="edit-link">
-      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/bbedit.gif" alt="Edit Preview">
-    </a>
-    <a href="https://youtube.com/shorts/SbWNwTw2AZY?feature=share" target="_blank" class="edit-link">
-      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/psycho.gif" alt="Edit Preview">
-    </a>
-    <a href="https://youtube.com/shorts/QDgz4diD8H4?feature=share" target="_blank" class="edit-link">
-      <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/beast.gif" alt="Edit Preview">
-    </a>
-  </div>
-</section>
+  <section class="fade-in">
+    <h2>EDITS</h2>
+    <div class="gallery">
+      <a href="https://youtube.com/shorts/jd1-WVEW678?feature=share" target="_blank" class="edit-link">
+        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/bbedit.gif" alt="Edit Preview">
+      </a>
+      <a href="https://youtube.com/shorts/SbWNwTw2AZY?feature=share" target="_blank" class="edit-link">
+        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/psycho.gif" alt="Edit Preview">
+      </a>
+      <a href="https://youtube.com/shorts/QDgz4diD8H4?feature=share" target="_blank" class="edit-link">
+        <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/beast.gif" alt="Edit Preview">
+      </a>
+    </div>
+  </section>
 
- <section class="contact-message fade-in">
-  <a href="#top" class="cta-button" onclick="highlightContacts()">Let's Work Together</a>
-  <br>
-  If you'd like to work with me, reach out on Discord or via email anytime.
-  <div class="contact">
-    <!-- contact info should be here -->
-  </div>
-</section>
+  <section class="contact-message fade-in">
+    <a href="#top" class="cta-button">Let's Work Together</a>
+    <br>
+    If you'd like to work with me, reach out on Discord or via email anytime.
+    <div class="contact">
+      <!-- contact info should be here -->
+    </div>
+  </section>
 
   <!-- Intersection Observer for fade-in -->
   <script>
@@ -562,7 +419,6 @@
       observer.observe(el);
     });
   </script>
-
   <!-- Typing Animation Script -->
   <script>
     const words = ["thumbnails", "editing", "banners", "everything."];
@@ -600,15 +456,100 @@
       typeEffect();
     });
   </script>
-
+  <!-- ICON TOOLTIP JS LOGIC -->
   <script>
-    function highlightContacts() {
-      const contacts = document.querySelector('.contact');
-      if (contacts) {
-        contacts.classList.add('highlight-contacts');
-        setTimeout(() => contacts.classList.remove('highlight-contacts'), 4000);
+    // Only one tooltip visible at a time, click or touch toggles and clicking another hides previous
+    (function() {
+      let activeTooltip = null, fadeTimeout = null;
+      const tooltips = document.querySelectorAll('.icon-tooltip');
+
+      function hideAllTooltips(fade=true) {
+        tooltips.forEach(el => {
+          el.classList.remove('active');
+          const content = el.querySelector('.tooltip-content');
+          if (content) {
+            if (fade && content.style.opacity === "1") {
+              content.classList.add('fading-out');
+              setTimeout(() => {
+                content.classList.remove('fading-out');
+                content.style.opacity = "";
+              }, 220);
+            } else {
+              content.classList.remove('fading-out');
+              content.style.opacity = "";
+            }
+          }
+        });
+        activeTooltip = null;
       }
-    }
+      // Open tooltip on click/touch, close previous
+      tooltips.forEach(el => {
+        el.addEventListener('click', function(e) {
+          e.stopPropagation();
+          if (activeTooltip === el) {
+            hideAllTooltips();
+            return;
+          }
+          hideAllTooltips();
+          el.classList.add('active');
+          const content = el.querySelector('.tooltip-content');
+          if (content) {
+            content.classList.remove('fading-out');
+            content.style.opacity = "1";
+          }
+          activeTooltip = el;
+        });
+        el.addEventListener('mouseenter', function(e) {
+          // For mouse hover only, not on mobile
+          if (window.innerWidth > 600) {
+            hideAllTooltips(false);
+            el.classList.add('active');
+            const content = el.querySelector('.tooltip-content');
+            if (content) {
+              content.classList.remove('fading-out');
+              content.style.opacity = "1";
+            }
+            activeTooltip = el;
+          }
+        });
+        el.addEventListener('mouseleave', function(e) {
+          // For mouse hover only, not on mobile
+          if (window.innerWidth > 600) {
+            hideAllTooltips();
+          }
+        });
+      });
+
+      // Hide tooltip if clicking anywhere else
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.icon-tooltip')) {
+          hideAllTooltips();
+        }
+      });
+      // Hide on scroll on mobile
+      window.addEventListener('scroll', function() {
+        if (window.innerWidth <= 600) {
+          hideAllTooltips();
+        }
+      });
+      // On resize, hide all
+      window.addEventListener('resize', function() {
+        hideAllTooltips();
+      });
+
+      // Keyboard accessibility: open on enter/space, close on esc
+      tooltips.forEach(el => {
+        el.addEventListener('keydown', function(e) {
+          if (e.key === "Enter" || e.key === " ") {
+            e.preventDefault();
+            el.click();
+          }
+          if (e.key === "Escape") {
+            hideAllTooltips();
+          }
+        });
+      });
+    })();
   </script>
 </body>
 </html>
