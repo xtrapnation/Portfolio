@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>xtrapnation – Thumbnails & Editing</title>
-  <link rel="icon" href="pfp.jpg" type="image/jpg" />
+  <link rel="icon" href="cpfp.jpg" type="image/jpg" />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
@@ -163,20 +163,38 @@
     }
 
     .cta-button {
-      background: #ff0077;
-      color: white;
-      padding: 14px 28px;
-      border-radius: 12px;
-      text-decoration: none;
-      font-weight: bold;
-      margin-bottom: 20px;
-      display: inline-block;
-      transition: background 0.3s ease;
-    }
+  background: linear-gradient(90deg, #ff0077, #ffbe00, #ff0077);
+  background-size: 200% 200%;
+  color: white;
+  padding: 16px 34px;
+  border-radius: 14px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.18em;
+  margin-bottom: 24px;
+  display: inline-block;
+  box-shadow: 0 0 18px #ff007760;
+  transition: transform 0.2s, box-shadow 0.2s;
+  animation: gradient-moving 2.5s linear infinite, pulse 1.6s infinite;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
 
-    .cta-button:hover {
-      background: #e6006b;
-    }
+    @keyframes gradient-moving {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+@keyframes pulse {
+  0%, 100% { transform: scale(1);}
+  50% { transform: scale(1.06);}
+}
+.cta-button:hover, .cta-button:focus {
+  box-shadow: 0 0 28px #ffbe00bb, 0 0 12px #ff0077cc;
+  transform: scale(1.09) rotate(-1deg);
+  background-position: 100% 0;
+}
 
     .contact-message {
       text-align: center;
@@ -197,7 +215,31 @@
         font-size: clamp(2em, 10vw, 3.5em);
         padding: 0 10px;
       }
+      /* Responsive tooltips for mobile */
+@media (max-width: 600px) {
+  .specs-icons-container {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  .icon-tooltip .tooltip-content {
+    width: 95vw !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    bottom: auto !important;
+    top: 115% !important;
+    font-size: 16px;
+    padding: 14px;
+    box-sizing: border-box;
+    word-break: break-word;
+    white-space: normal;
+  }
+}
 
+/* Always allow tooltip to wrap if needed */
+.icon-tooltip .tooltip-content {
+  word-break: break-word;
+  white-space: normal;
+}
       .rotating-text {
         font-size: 1.1em;
         padding: 0 10px;
@@ -329,7 +371,7 @@
   </p>
   <div class="contact">
     <i class="fab fa-discord"></i> <b>xtrapnation</b> &nbsp;|&nbsp;
-    <i class="fas fa-envelope"></i> <b>example@example.com</b>
+    <i class="fas fa-envelope"></i> <b>xtrapnationtoo@gmail.com</b>
   </div>
 
   <div class="specs-icons-container" aria-label="Specs & Pricing">
@@ -367,7 +409,7 @@
       <div class="tooltip-content">
         <strong>Prices:</strong><br>
         $15* per minute (longforms)<br>
-        $15* (short)<br>
+        $15* (per short)<br>
         $20* (thumbnails)<br>
         $10 (banners/pfp's)<br>
         <small>*Prices may vary based on complexity and turnaround</small>
