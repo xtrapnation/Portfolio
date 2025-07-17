@@ -239,30 +239,33 @@
         border-radius: 0;
       }
     }
-.yt-channel-link {
-    color: #ff0077;
-    text-decoration: underline;
-    font-weight: bold;
-    cursor: pointer;
-    transition: color 0.2s;
-  }
-  .yt-channel-link:hover {
-    color: #fff700;
-    text-decoration: underline wavy;
-  }
-  .edit-link img {
-    cursor: pointer;
-    border: 3px solid transparent;
-    transition: border 0.2s, box-shadow 0.2s;
-  }
-  .edit-link:hover img {
-    border: 3px solid #ff0077;
-    box-shadow: 0 0 12px #ff0077;
-  }
-<head>
-  <meta charset="UTF-8">
-  <title>Specs & Pricing Tooltip</title>
-  <style>
+    .yt-channel-link {
+      color: #ff0077;
+      text-decoration: underline;
+      font-weight: bold;
+      cursor: pointer;
+      transition: color 0.2s;
+    }
+    .yt-channel-link:hover {
+      color: #fff700;
+      text-decoration: underline wavy;
+    }
+    .edit-link img {
+      cursor: pointer;
+      border: 3px solid transparent;
+      transition: border 0.2s, box-shadow 0.2s;
+    }
+    .edit-link:hover img {
+      border: 3px solid #ff0077;
+      box-shadow: 0 0 12px #ff0077;
+    }
+    /* Tooltip icons style */
+    .specs-icons-container {
+      margin: 18px 0 8px 0;
+      display: flex;
+      justify-content: center;
+      gap: 18px;
+    }
     .icon-tooltip {
       position: relative;
       display: inline-block;
@@ -271,7 +274,7 @@
     }
     .icon-tooltip .tooltip-content {
       visibility: hidden;
-      width: 250px;
+      width: 260px;
       background: #222;
       color: #fff;
       text-align: left;
@@ -285,61 +288,27 @@
       opacity: 0;
       transition: opacity 0.3s;
       font-size: 15px;
+      box-shadow: 0 0 20px #000a;
     }
-    .icon-tooltip:hover .tooltip-content {
+    .icon-tooltip:hover .tooltip-content,
+    .icon-tooltip:focus-within .tooltip-content {
       visibility: visible;
       opacity: 1;
     }
     .icon {
       font-size: 36px;
       vertical-align: middle;
+      color: #ff0077;
+      transition: color 0.2s;
     }
-  </style>
-</head>
-<body>
-  <div>
-    <span class="icon-tooltip">
-      <span class="icon">🖥️</span>
-      <div class="tooltip-content">
-        <strong>PC Specs:</strong><br>
-        RTX 5090 32GB OC<br>
-        Ryzen 7 9800x3D<br>
-        64GB DDR5 6000Mhz<br>
-        7TB m.2 NVME<br>
-        <em>Faster editing and render times</em>
-      </div>
-    </span>
-    <span class="icon-tooltip">
-      <span class="icon">🖲️</span>
-      <div class="tooltip-content">
-        <strong>Monitor:</strong><br>
-        AW3225QF<br>
-        32 inch, 4k, OLED, 240hz<br>
-        <em>4k oled = perfect colors</em>
-      </div>
-    </span>
-    <span class="icon-tooltip">
-      <span class="icon">💻</span>
-      <div class="tooltip-content">
-        <strong>Software:</strong><br>
-        Photoshop 2025<br>
-        Premiere Pro 2025<br>
-        After Effects 2025
-      </div>
-    </span>
-    <span class="icon-tooltip">
-      <span class="icon">💸</span>
-      <div class="tooltip-content">
-        <strong>Prices:</strong><br>
-        $15* per minute (longforms)<br>
-        $15* (short)<br>
-        $20* (thumbnails)<br>
-        $10 (banners/pfp's)<br>
-        <small>*Prices may vary based on complexity and turnaround</small>
-      </div>
-    </span>
-  </div>
-</body>
+    .icon-tooltip:hover .icon,
+    .icon-tooltip:focus-within .icon {
+      color: #fff700;
+    }
+    .tooltip-content small {
+      color: #ff90b7;
+      font-size: 0.93em;
+    }
   </style>
 </head>
 <body>
@@ -353,11 +322,54 @@
       I do <span class="highlight" id="typed-word"></span><span class="cursor"></span>
     </p>
 
+    <div class="specs-icons-container" aria-label="Specs & Pricing">
+      <span class="icon-tooltip" tabindex="0">
+        <span class="icon" title="PC Specs"><i class="fas fa-desktop"></i></span>
+        <div class="tooltip-content">
+          <strong>PC Specs:</strong><br>
+          RTX 5090 32GB OC<br>
+          Ryzen 7 9800x3D<br>
+          64GB DDR5 6000Mhz<br>
+          7TB m.2 NVME<br>
+          <em>Faster editing and render times</em>
+        </div>
+      </span>
+      <span class="icon-tooltip" tabindex="0">
+        <span class="icon" title="Monitor"><i class="fas fa-tv"></i></span>
+        <div class="tooltip-content">
+          <strong>Monitor:</strong><br>
+          AW3225QF<br>
+          32 inch, 4k, OLED, 240hz<br>
+          <em>4k OLED = perfect colors</em>
+        </div>
+      </span>
+      <span class="icon-tooltip" tabindex="0">
+        <span class="icon" title="Software"><i class="fas fa-layer-group"></i></span>
+        <div class="tooltip-content">
+          <strong>Software:</strong><br>
+          Photoshop 2025<br>
+          Premiere Pro 2025<br>
+          After Effects 2025
+        </div>
+      </span>
+      <span class="icon-tooltip" tabindex="0">
+        <span class="icon" title="Prices"><i class="fas fa-dollar-sign"></i></span>
+        <div class="tooltip-content">
+          <strong>Prices:</strong><br>
+          $15* per minute (longforms)<br>
+          $15* (short)<br>
+          $20* (thumbnails)<br>
+          $10 (banners/pfp's)<br>
+          <small>*Prices may vary based on complexity and turnaround</small>
+        </div>
+      </span>
+    </div>
+
     <p class="bio">
-  I love YouTube and have a 
-  <a href="https://www.youtube.com/@xtrapnation" class="yt-channel-link" target="_blank">channel</a>
-  with over 1.6 million subscribers. I can edit videos, make nice thumbnails and anything else you can imagine.
-</p>
+      I love YouTube and have a 
+      <a href="https://www.youtube.com/@xtrapnation" class="yt-channel-link" target="_blank">channel</a>
+      with over 1.6 million subscribers. I can edit videos, make nice thumbnails and anything else you can imagine.
+    </p>
     <div class="contact">
       <i class="fab fa-discord"></i> <b>xtrapnation</b> &nbsp;|&nbsp;
       <i class="fas fa-envelope"></i> <b>example@example.com</b>
@@ -456,9 +468,6 @@
       typeEffect();
     });
   </script>
-</body>
-</html>
-
 
   <script>
     function highlightContacts() {
