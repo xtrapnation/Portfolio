@@ -11,7 +11,7 @@
     html {
       scroll-behavior: smooth;
     }
-
+   
     body {
       margin: 0;
       font-family: 'Inter', sans-serif;
@@ -259,7 +259,87 @@
     border: 3px solid #ff0077;
     box-shadow: 0 0 12px #ff0077;
   }
-
+<head>
+  <meta charset="UTF-8">
+  <title>Specs & Pricing Tooltip</title>
+  <style>
+    .icon-tooltip {
+      position: relative;
+      display: inline-block;
+      cursor: pointer;
+      margin: 0 10px;
+    }
+    .icon-tooltip .tooltip-content {
+      visibility: hidden;
+      width: 250px;
+      background: #222;
+      color: #fff;
+      text-align: left;
+      border-radius: 8px;
+      padding: 12px;
+      position: absolute;
+      z-index: 10;
+      bottom: 130%; /* Position above the icon */
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 0;
+      transition: opacity 0.3s;
+      font-size: 15px;
+    }
+    .icon-tooltip:hover .tooltip-content {
+      visibility: visible;
+      opacity: 1;
+    }
+    .icon {
+      font-size: 36px;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <span class="icon-tooltip">
+      <span class="icon">🖥️</span>
+      <div class="tooltip-content">
+        <strong>PC Specs:</strong><br>
+        RTX 5090 32GB OC<br>
+        Ryzen 7 9800x3D<br>
+        64GB DDR5 6000Mhz<br>
+        7TB m.2 NVME<br>
+        <em>Faster editing and render times</em>
+      </div>
+    </span>
+    <span class="icon-tooltip">
+      <span class="icon">🖲️</span>
+      <div class="tooltip-content">
+        <strong>Monitor:</strong><br>
+        AW3225QF<br>
+        32 inch, 4k, OLED, 240hz<br>
+        <em>4k oled = perfect colors</em>
+      </div>
+    </span>
+    <span class="icon-tooltip">
+      <span class="icon">💻</span>
+      <div class="tooltip-content">
+        <strong>Software:</strong><br>
+        Photoshop 2025<br>
+        Premiere Pro 2025<br>
+        After Effects 2025
+      </div>
+    </span>
+    <span class="icon-tooltip">
+      <span class="icon">💸</span>
+      <div class="tooltip-content">
+        <strong>Prices:</strong><br>
+        $15* per minute (longforms)<br>
+        $15* (short)<br>
+        $20* (thumbnails)<br>
+        $10 (banners/pfp's)<br>
+        <small>*Prices may vary based on complexity and turnaround</small>
+      </div>
+    </span>
+  </div>
+</body>
   </style>
 </head>
 <body>
