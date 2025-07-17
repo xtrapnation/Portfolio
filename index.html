@@ -320,6 +320,37 @@
       visibility: visible;
       opacity: 1;
     }
+.copy-text {
+  position: relative;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.copied-indicator {
+  display: none;
+  position: absolute;
+  top: -1.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #ff0077;
+  color: white;
+  padding: 4px 8px;
+  border-radius: 6px;
+  font-size: 0.75em;
+  font-weight: bold;
+  white-space: nowrap;
+}
+
+.copy-text.copied .copied-indicator {
+  display: block;
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
     .icon {
       font-size: 36px;
       vertical-align: middle;
@@ -354,7 +385,14 @@
         white-space: normal;
       }
     }
-
+<script>
+function copyToClipboard(text, element) {
+  navigator.clipboard.writeText(text).then(() => {
+    element.classList.add('copied');
+    setTimeout(() => element.classList.remove('copied'), 2000);
+  });
+}
+</script>
     /* Always allow tooltip to wrap if needed */
     .icon-tooltip .tooltip-content {
       word-break: break-word;
@@ -377,10 +415,17 @@
       <a href="https://www.youtube.com/@xtrapnation" class="yt-channel-link" target="_blank">channel</a>
       with over 1.6 million subscribers. I can edit videos, make nice thumbnails and anything else you can imagine.
     </p>
-    <div class="contact">
-      <i class="fab fa-discord"></i> <b>xtrapnation</b> &nbsp;|&nbsp;
-      <i class="fas fa-envelope"></i> <b>xtrapnationtoo@gmail.com</b>
-    </div>
+   <div class="contact">
+  <span class="copy-text" onclick="copyToClipboard('xtrapnation', this)">
+    <i class="fab fa-discord"></i> <b>xtrapnation</b>
+    <span class="copied-indicator">Copied!</span>
+  </span>
+  &nbsp;|&nbsp;
+  <span class="copy-text" onclick="copyToClipboard('xtrapnationtoo@gmail.com', this)">
+    <i class="fas fa-envelope"></i> <b>xtrapnationtoo@gmail.com</b>
+    <span class="copied-indicator">Copied!</span>
+  </span>
+</div>
 
     <div class="specs-icons-container" aria-label="Specs & Pricing">
       <span class="icon-tooltip" tabindex="0">
