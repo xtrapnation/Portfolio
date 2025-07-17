@@ -290,6 +290,7 @@
       display: flex;
       justify-content: center;
       gap: 18px;
+      position: relative;
     }
     .icon-tooltip {
       position: relative;
@@ -306,7 +307,7 @@
       border-radius: 8px;
       padding: 12px;
       position: absolute;
-      z-index: 10;
+      z-index: 20;
       bottom: 130%; /* Position above the icon */
       left: 50%;
       transform: translateX(-50%);
@@ -314,43 +315,14 @@
       transition: opacity 0.3s;
       font-size: 15px;
       box-shadow: 0 0 20px #000a;
+      pointer-events: none;
     }
     .icon-tooltip:hover .tooltip-content,
     .icon-tooltip:focus-within .tooltip-content {
       visibility: visible;
       opacity: 1;
+      pointer-events: auto;
     }
-.copy-text {
-  position: relative;
-  cursor: pointer;
-  display: inline-block;
-}
-
-.copied-indicator {
-  display: none;
-  position: absolute;
-  top: -1.5em;
-  left: 50%;
-  transform: translateX(-50%);
-  background: #ff0077;
-  color: white;
-  padding: 4px 8px;
-  border-radius: 6px;
-  font-size: 0.75em;
-  font-weight: bold;
-  white-space: nowrap;
-}
-
-.copy-text.copied .copied-indicator {
-  display: block;
-  animation: fadeOut 2s forwards;
-}
-
-@keyframes fadeOut {
-  0% { opacity: 1; }
-  80% { opacity: 1; }
-  100% { opacity: 0; }
-}
     .icon {
       font-size: 36px;
       vertical-align: middle;
@@ -373,7 +345,7 @@
         margin-bottom: 36px;
       }
       .icon-tooltip .tooltip-content {
-        width: 95vw !important;
+        width: 91vw !important;
         left: 50% !important;
         transform: translateX(-50%) !important;
         bottom: auto !important;
@@ -409,16 +381,16 @@
       with over 1.6 million subscribers. I can edit videos, make nice thumbnails and anything else you can imagine.
     </p>
    <div class="contact">
-  <span class="copy-text" onclick="copyToClipboard('xtrapnation', this)">
-    <i class="fab fa-discord"></i> <b>xtrapnation</b>
-    <span class="copied-indicator">Copied!</span>
-  </span>
-  &nbsp;|&nbsp;
-  <span class="copy-text" onclick="copyToClipboard('xtrapnationtoo@gmail.com', this)">
-    <i class="fas fa-envelope"></i> <b>xtrapnationtoo@gmail.com</b>
-    <span class="copied-indicator">Copied!</span>
-  </span>
-</div>
+      <span class="copy-text" onclick="copyToClipboard('xtrapnation', this)">
+        <i class="fab fa-discord"></i> <b>xtrapnation</b>
+        <span class="copied-indicator">Copied!</span>
+      </span>
+      &nbsp;|&nbsp;
+      <span class="copy-text" onclick="copyToClipboard('xtrapnationtoo@gmail.com', this)">
+        <i class="fas fa-envelope"></i> <b>xtrapnationtoo@gmail.com</b>
+        <span class="copied-indicator">Copied!</span>
+      </span>
+    </div>
 
     <div class="specs-icons-container" aria-label="Specs & Pricing">
       <span class="icon-tooltip" tabindex="0">
