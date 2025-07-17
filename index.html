@@ -308,6 +308,95 @@
       justify-content: center;
       gap: 18px;
     }
+/* Tooltip: Desktop behavior remains the same */
+.icon-tooltip .tooltip-content {
+  /* ...existing styles... */
+}
+
+/* Tooltip: Mobile fix */
+@media (max-width: 600px) {
+  .specs-icons-container {
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 36px; /* Add more space below icons for tooltip */
+  }
+  .icon-tooltip .tooltip-content {
+    position: fixed !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: auto !important;
+    bottom: 8vh !important;
+    width: 96vw !important;
+    max-width: 400px;
+    min-width: 0;
+    z-index: 2000;
+    border-radius: 16px;
+    font-size: 1.1em;
+    box-shadow: 0 6px 32px #000a;
+    word-break: break-word;
+    white-space: normal;
+    padding: 16px 16px;
+    text-align: left;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: none; /* Tooltip only shows on hover/focus; can't be interacted with, prevents overlap issues */
+  }
+  .icon-tooltip:hover .tooltip-content,
+  .icon-tooltip:focus-within .tooltip-content {
+    pointer-events: auto;
+  }
+}
+
+/* Prevent tooltip from being cut off by other content */
+.specs-icons-container {
+  margin-bottom: 38px;
+}
+
+/* Fix contact highlight snap by keeping the padding/min-height */
+.contact,
+.highlight-contacts {
+  min-height: 38px; /* Set to your contact div's height with padding */
+  transition: background 0.4s, padding 0.4s, border-radius 0.4s;
+}
+.highlight-contacts {
+  background: #444;
+  padding: 10px;
+  border-radius: 10px;
+  display: inline-block;
+  animation: fadeOut 2s ease 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% {
+    background: #444;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  99% {
+    background: #444;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  100% {
+    background: none;
+    padding: 10px; /* keep padding so it doesn't snap */
+    border-radius: 10px;
+  }
+}
+@media (max-width: 600px) {
+  .mobile-tooltip-spacer {
+    height: 62px; /* At least the height of the largest tooltip */
+  }
+}
+.highlight-contacts {
+  background: #444;
+  border-radius: 10px;
+  animation: fadeOutBg 2s ease 2s forwards;
+}
+@keyframes fadeOutBg {
+  0% { background: #444; }
+  100% { background: none; }
+}
     .icon-tooltip {
       position: relative;
       display: inline-block;
@@ -351,10 +440,12 @@
       color: #ff90b7;
       font-size: 0.93em;
     }
+
   </style>
 </head>
 <body>
   <div class="wavy-bg"></div>
+<div class="mobile-tooltip-spacer"></div>
 
  <header>
   <img src="https://raw.githubusercontent.com/xtrapnation/Portfolio/main/pfp.jpg" alt="Profile Picture">
